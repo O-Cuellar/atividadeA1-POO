@@ -6,11 +6,12 @@ public class Questao01 extends BaseQuestao{
     Scanner scanner = new Scanner(System.in);
     
     public void Checar(int n1, int n2){
-        if (n1 > n2) {
-            System.out.println("O primeiro é maior");
-        }
-        else{
-            System.out.println("O segundo é maior");
+        if (n1 == n2) {
+            System.out.println("Os dois números são iguais" );
+        } else if (n1> n2) {
+            System.out.println(n1 +" é maior do que " + n2);
+        } else {
+            System.out.println(n2 +" é maior do que "+ n1);
         }
     }
 
