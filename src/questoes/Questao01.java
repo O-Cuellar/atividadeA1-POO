@@ -16,6 +16,7 @@ public class Questao01 extends BaseQuestao{
     }
 
     public void Executar(){
+        System.out.println("--------COMPARADOR DE NÚMEROS--------\n");  
         System.out.println("Digite um número inteiro: ");
         int n1 = scanner.nextInt();
         System.out.println("Digite outro: ");
