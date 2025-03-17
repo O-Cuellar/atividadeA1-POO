@@ -10,9 +10,9 @@ public class Questao01 extends BaseQuestao{
             System.out.println("Os dois números são iguais" );
         } else if (n1> n2) {
             System.out.println(n1 +" é maior do que " + n2);
-        } else {
-            System.out.println(n2 +" é maior do que "+ n1);
-        }
+            } else {
+                System.out.println(n2 +" é maior do que "+ n1);
+                }
     }
 
     public void Executar(){
