@@ -1,4 +1,4 @@
-package dominio;
+package questoes;
 
 public class Questao09 extends BaseQuestao{
     
