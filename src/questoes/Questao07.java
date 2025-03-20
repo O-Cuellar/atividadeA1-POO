@@ -21,6 +21,11 @@ public class Questao07 extends BaseQuestao{
                 totalPago = totalGasto/2;
                 System.out.println("Opção de pagamento número 2 escolhida, em duas vezes (preço de etiqueta), valor a ser pago em cada parcela: " + totalPago);
             case 3:
+                if(totalGasto > 100){
+                    System.out.println("Digite o número de parcelas: ");
+                    int parcelas = scanner.nextInt();
+                    totalPago = totalGasto * Math.pow(1+ 0.3, parcelas);
+                }
         }
     }
 
