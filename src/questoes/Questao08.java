@@ -7,6 +7,7 @@ public class Questao08 extends BaseQuestao{
 
     public void FinalPrice(double valorFabrica){
         int opcao;
+        double valorAdicional = 0;
         double valorFinal = 0;
 
         do {
@@ -21,18 +22,23 @@ public class Questao08 extends BaseQuestao{
                 case 0:
                     break;
                 case 1:
-                    valorFinal = valorFabrica + 1750.00;
+                    valorAdicional += 1750;
                     break;
                 case 2:
-                    valorFinal = valorFabrica + 800.00;
+                    valorAdicional += 800;
+                    break;
                 case 3:
-                    valorFinal = valorFabrica + 1200.00;
+                    valorAdicional += 1200;
+                    break;
                 case 4:
-                    valorFinal = valorFabrica + 2000.00;
+                    valorAdicional += 2000;
+                    break;
+                default:
+                    System.out.println("Opção invalida, escolha uma das opções validadas ou 0 para sair!");
             }
 
         } while (opcao != 0);
-
+        valorFinal = valorFabrica + valorAdicional;
         System.out.println("O preço final do veículo com os itens adicionados é: R$ " + valorFinal);
     }
 

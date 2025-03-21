@@ -22,6 +22,8 @@ public class Questao10 extends BaseQuestao{
     }
 
     public void Executar(){
+        double impostoTotal = 0;
+        
         System.out.println("Digite o valor do salário-mínimo: ");
         double salarioMinimo = scanner.nextDouble();
         System.out.println("Digite o número de dependentes: ");
@@ -30,6 +32,8 @@ public class Questao10 extends BaseQuestao{
         double salarioFuncionario = scanner.nextDouble();
         System.out.println("Digite o valor do imposto já pago pelo funcionario: \n ");
         double impostoAnterior = scanner.nextDouble();
-        double impostoBruto = ImpostoBruto(salarioMinimo,  salarioFuncionario);
+        double impostoLiquido = ImpostoBruto(salarioMinimo,  salarioFuncionario);
+        impostoTotal = impostoAnterior + impostoLiquido;
+        System.out.println("A quantidade total de imposto descontada do sálario será: " + impostoTotal);
     }
 }

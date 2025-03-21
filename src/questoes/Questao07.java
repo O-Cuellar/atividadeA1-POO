@@ -16,19 +16,24 @@ public class Questao07 extends BaseQuestao{
         switch (option) {
             case 1:
                 totalPago = totalGasto - (totalGasto * 0.1);
-                System.out.println("Opção de pagamento número 1 escolhida, a vista com 10% de desconto, valor a ser pago: " + totalPago);
+                System.out.println("\nOpção de pagamento número 1 escolhida, a vista com 10% de desconto, valor a ser pago: " + totalPago);
                 break;
             case 2:
                 totalPago = totalGasto/2;
-                System.out.println("Opção de pagamento número 2 escolhida, em duas vezes (preço de etiqueta), valor a ser pago em cada parcela: " + totalPago);
+                System.out.println("\nOpção de pagamento número 2 escolhida, em duas vezes (preço de etiqueta), valor a ser pago em cada parcela: " + totalPago);
                 break;
             case 3:
                 if(totalGasto > 100){
-                    System.out.println("Digite o número de parcelas: ");
+                    System.out.println("\nOpção de pagamento número 3 escolhida, digite o número de parcelas: ");
                     int parcelas = scanner.nextInt();
-                    totalPago = totalGasto * Math.pow(1+ 0.3, parcelas);
+                    totalGasto += totalGasto * 0.03;
+                    totalPago = totalGasto;
+                    System.out.println("A quantidade de parcelas a escolhida foi " + parcelas + " e o valor das parcelas será de: " + totalPago);
                     break;
                 }
+            default:
+                System.out.println("Opção invalida!");
+                break;
         }
     }
 
