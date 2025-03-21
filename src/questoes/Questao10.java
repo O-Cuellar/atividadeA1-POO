@@ -24,6 +24,7 @@ public class Questao10 extends BaseQuestao{
     public void Executar(){
         double impostoTotal = 0;
         
+        System.out.println("----Calculo de imposto----");
         System.out.println("Digite o valor do salário-mínimo: ");
         double salarioMinimo = scanner.nextDouble();
         System.out.println("Digite o número de dependentes: ");

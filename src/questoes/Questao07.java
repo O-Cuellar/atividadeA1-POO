@@ -19,8 +19,8 @@ public class Questao07 extends BaseQuestao{
                 System.out.println("\nOpção de pagamento número 1 escolhida, a vista com 10% de desconto, valor a ser pago: " + totalPago);
                 break;
             case 2:
-                totalPago = totalGasto/2;
-                System.out.println("\nOpção de pagamento número 2 escolhida, em duas vezes (preço de etiqueta), valor a ser pago em cada parcela: " + totalPago);
+                totalPago = totalGasto;
+                System.out.println("\nOpção de pagamento número 2 escolhida, em duas vezes (preço de etiqueta), o valor a ser pago em cada parcela será " + totalPago/2 + ", e o total a ser pago será: " + totalPago);
                 break;
             case 3:
                 if(totalGasto > 100){
@@ -28,7 +28,7 @@ public class Questao07 extends BaseQuestao{
                     int parcelas = scanner.nextInt();
                     totalGasto += totalGasto * 0.03;
                     totalPago = totalGasto;
-                    System.out.println("A quantidade de parcelas a escolhida foi " + parcelas + " e o valor das parcelas será de: " + totalPago);
+                    System.out.println("A quantidade de parcelas a escolhida foi " + parcelas + ", o valor das parcelas será de " + totalPago/parcelas + " e o total a ser pago será: " + totalPago);
                     break;
                 }
             default:
