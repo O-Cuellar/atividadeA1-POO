@@ -5,36 +5,39 @@ import java.util.Scanner;
 public class Questao10 extends BaseQuestao{
     Scanner scanner = new Scanner(System.in);
 
-    public double ImpostoBruto(double salarioMinimo, double salarioFuncionario){
+    public void Imposto(double salarioMinimo, int numDependentes, double salarioFuncionario, double impostoPrevio){
         double impostoBruto = 0;
-        double taxa = 0;
-        double impostoLiquido = 0;
-        if (salarioFuncionario >= salarioMinimo * 12){
-            impostoBruto = 0.2;
-            } else if (salarioFuncionario >= salarioMinimo * 5){
-                impostoBruto = 0.08;
+        double slrTributado = 0;
+        double txAdicional = 0;
+        double impostoTotal = 0;
+
+        if(salarioFuncionario >= salarioMinimo * 12){
+            impostoBruto = salarioFuncionario * 0.2;
+            txAdicional = impostoBruto * 0.04;
+            slrTributado = salarioFuncionario - txAdicional;
+            } else if (salarioFuncionario >= salarioMinimo * 5) {
+                impostoBruto = salarioFuncionario * 0.08;
+                txAdicional = impostoBruto * 0.04;
+                slrTributado = salarioFuncionario - txAdicional;
                 } else {
-                    impostoBruto = 0;
+                    slrTributado = salarioFuncionario;
                 }
-        taxa = impostoBruto * 0.04;
-        impostoLiquido = impostoBruto + taxa;
-        return impostoLiquido;
+        impostoTotal = impostoPrevio + impostoBruto + txAdicional;
+
+        System.out.println("O valor do Salário com os descontos de imposto será: " + slrTributado + " e o valor dos impostos pagos é " + impostoTotal);
     }
 
     public void Executar(){
-        double impostoTotal = 0;
-        
-        System.out.println("----Calculo de imposto----");
-        System.out.println("Digite o valor do salário-mínimo: ");
+        System.out.println("\n----Calculo de imposto----");
+        System.out.println("\nDigite o valor do sálario mínimo: ");
         double salarioMinimo = scanner.nextDouble();
-        System.out.println("Digite o número de dependentes: ");
+        System.out.println("\nDigite o número de dependentes: ");
         int numDependentes = scanner.nextInt();
-        System.out.println("Digite o valor do salário do funcionário: ");
+        System.out.println("\nDigite o valor do salário do funcíonario: ");
         double salarioFuncionario = scanner.nextDouble();
-        System.out.println("Digite o valor do imposto já pago pelo funcionario: \n ");
-        double impostoAnterior = scanner.nextDouble();
-        double impostoLiquido = ImpostoBruto(salarioMinimo,  salarioFuncionario);
-        impostoTotal = impostoAnterior + impostoLiquido;
-        System.out.println("A quantidade total de imposto descontada do sálario será: " + impostoTotal);
+        System.out.println("\nDigite a taxa de imposto já pega pelo funcionário: ");
+        double impostoPrevio = scanner.nextDouble();
+        Imposto(salarioMinimo, numDependentes, salarioFuncionario , impostoPrevio);
     }
+
 }
